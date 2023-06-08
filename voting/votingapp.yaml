@@ -76,3 +76,15 @@ spec:
         env:
         - name: REDIS
           value: "azure-vote-back"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-vote-front
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: azure-vote-front
+         
